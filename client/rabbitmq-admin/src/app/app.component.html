@@ -1,0 +1,24 @@
+<div class="products">
+  <form [formGroup]="dataForm">
+    <h2>Add new Item</h2>
+    <div class="add_item">
+      <input type="text" formControlName="title" placeholder="Product name">
+      <input type="text" formControlName="image" placeholder="Image">
+      <button (click)="addNewProduct($event)">Add new</button>
+    </div>
+  </form>
+
+  <ng-container *ngIf="productList">
+    <div class="product_list" *ngFor="let product of productList">
+      <div class="product">
+        <p>Id: {{ product.id }}</p>
+        <p>Product name: {{ product.title }}</p>
+        <p>Image: ImageHere</p>
+        <div class="likes">
+          <p>Likes: {{ product.likes }}</p>
+          <button (click)="removeProduct($event, product.id)">Remove Item</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

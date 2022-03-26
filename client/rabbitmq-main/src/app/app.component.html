@@ -1,0 +1,16 @@
+<div class="products">
+  <h1>Product List</h1>
+  <ng-container *ngIf="productList">
+    <div class="product_list" *ngFor="let product of productList">
+      <div class="product">
+        <p>Id: {{ product.id }}</p>
+        <p>Product name: {{ product.title }}</p>
+        <p>Image: ImageHere</p>
+        <div class="likes">
+          <p>Likes: {{ product.likes }}</p>
+          <button (click)="addLike($event, product.id)">+</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
